@@ -1,43 +1,46 @@
-# LegalDoc AI
+# Hukuk Dökümanları için AI Asistanı
 
-LegalDoc AI is a premium, AI-powered legal document generation assistant for the Turkish legal system. It allows users to quickly draft legal petitions, contracts, and notices through a guided wizard interface.
+LegalDoc AI, Türk hukuk sistemi için geliştirilmiş, yapay zeka destekli bir hukuk dökümanı hazırlama asistanıdır. Rehberli sihirbaz arayüzü sayesinde kullanıcıların hızlıca dilekçe, sözleşme ve ihtarname taslakları oluşturmasına olanak tanır.
 
-## 🚀 Features
-- **Modern UI**: Dark-themed glassmorphism design.
-- **Guided Wizard**: Step-by-step assistant for document creation.
-- **AI Integration**: Powered by Google Gemini 2.0 Flash.
-- **Responsive**: Fully optimized for mobile and desktop.
-- **Interactive Editor**: Real-time review and manual editing of AI drafts.
+## 🚀 Özellikler
+- **Modern Arayüz**: Koyu tema ve glassmorphism tasarımı ile premium deneyim.
+- **Rehberli Sihirbaz**: Döküman oluşturma sürecinde adım adım asistan desteği.
+- **Döküman Yönetimi**: Oluşturulan dökümanları tarayıcıda (localStorage) saklama ve yönetme.
+- **Tam Liste Görünümü**: Tüm geçmiş belgeleri tek bir ekranda görebilme.
+- **Profesyonel Yazdırma**: Dökümanlara özel baskı tasarımı ve "Yazdır" butonu.
+- **Yapay Zeka Entegrasyonu**: Llama 3 / Hugging Face altyapısı ile akıllı döküman kurgulama.
+- **Responsive**: Mobil ve masaüstü cihazlar için tam uyumlu.
 
-## 🛠️ Tech Stack
+## 🛠️ Teknoloji Yığını
 - **Framework**: [Next.js 15+](https://nextjs.org/)
-- **Language**: TypeScript
-- **Styling**: Vanilla CSS (Modern Flexbox/Grid)
-- **AI**: Google Generative AI (Gemini API)
-- **Icons**: Lucide React
+- **Dil**: TypeScript
+- **Stil**: Vanilla CSS (Modern Flexbox/Grid)
+- **Yapay Zeka**: Hugging Face Inference API
+- **İkonlar**: Lucide React
+- **Döküman İşleme**: jsPDF & docx
 
-## 🚦 Getting Started
+## 🚦 Başlangıç
 
-### Prerequisites
-- Node.js installed on your machine.
-- A Google Gemini API Key.
+### Ön Gereksinimler
+- Bilgisayarınızda Node.js kurulu olmalıdır.
+- Bir Hugging Face (HF_TOKEN) API anahtarı.
 
-### Installation
-1. Clone the repository or download the files.
-2. Install dependencies:
+### Kurulum
+1. Depoyu klonlayın veya dosyaları indirin.
+2. Bağımlılıkları yükleyin:
    ```bash
    npm install
    ```
-3. Create a `.env.local` file in the root directory and add your API key:
+3. Kök dizinde bir `.env.local` dosyası oluşturun ve API anahtarınızı ekleyin:
    ```env
-   GOOGLE_GEMINI_API_KEY=your_api_key_here
+   HF_TOKEN=api_anahtariniz_buraya
    ```
 
-### Running Locally
+### Yerel Çalıştırma
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) to see the application.
+Uygulamayı görmek için [http://localhost:3000](http://localhost:3000) adresini açın.
 
-## ⚖️ License
-This project is an MVP for legal documentation assistance. Users should always verify AI-generated content with a certified legal professional.
+## ⚖️ Lisans ve Sorumluluk Reddi
+Bu proje, hukuki döküman hazırlama süreçlerine yardımcı olmak amacıyla geliştirilmiş bir MVP'dir. Yapay zeka tarafından üretilen içerikler her zaman yetkili bir hukuk profesyoneli tarafından kontrol edilmelidir. Bu uygulama hukuki danışmanlık vermez.
