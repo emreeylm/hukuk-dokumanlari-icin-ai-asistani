@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const hfToken = process.env.HF_TOKEN;
-const MODEL_NAME = "pkupie/lawyer-llama-13b-v2";
+const MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.3";
 
 export async function POST(req: Request) {
     try {
@@ -54,7 +54,10 @@ export async function POST(req: Request) {
 
         if (!response.ok) {
             const errorText = await response.text();
-            throw new Error(`HF Error: ${response.status} - ${errorText}`);
+            console.error("HF API Error:", response.status, errorText);
+            return NextResponse.json({
+                error: `API Hatası: ${response.status} - ${errorText.substring(0, 200)}`
+            }, { status: response.status });
         }
 
         const data = await response.json();
@@ -63,6 +66,7 @@ export async function POST(req: Request) {
         return NextResponse.json({ content: text });
     } catch (error) {
         console.error("HF Generation Error:", error);
-        return NextResponse.json({ error: "Doküman üretilirken bir hata oluştu." }, { status: 500 });
+        const errorMessage = error instanceof Error ? error.message : "Bilinmeyen hata";
+        return NextResponse.json({ error: `Doküman üretilirken hata: ${errorMessage}` }, { status: 500 });
     }
 }
