@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const hfToken = process.env.HF_TOKEN;
-const MODEL_NAME = "unsloth/Qwen3-Coder-Next-GGUF";
+const MODEL_NAME = "Qwen/Qwen3-8B";
 
 export async function POST(req: Request) {
     try {
